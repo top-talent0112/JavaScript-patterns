@@ -1,3 +1,5 @@
+// king
+
 class KingJaff {
     makeDecision = () => {
         console.log("I am the king who can make decisions");
