@@ -47,3 +47,13 @@ let result2 = re2.exec('2019-12-23');
 console.log(result2);
 console.log(result2.groups.year);
 
+// 4.2 Using Named groups inside regex itself
+
+let sameWords = /(?<fruit>orange|apple)==\k<fruit>/u;
+console.log(sameWords.test('orange==orange'));
+console.log(sameWords.test('apple==orange'));
+
+// 4.3 Using named groups in String.prototype.replace
+let re = /(?<firstname>[A-Za-z]+) (?<lastname>[A-Za-z]+)/u;
+console.log('Dream High'.replace(re, '$<lastname> $<firstname>'));
+
