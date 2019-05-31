@@ -57,3 +57,34 @@ console.log(sameWords.test('apple==orange'));
 let re = /(?<firstname>[A-Za-z]+) (?<lastname>[A-Za-z]+)/u;
 console.log('Dream High'.replace(re, '$<lastname> $<firstname>'));
 
+// 5. Rest properties for Objects
+
+// 5.1 You can use rest to help extract only properties you want
+
+let { firstName1, age, ...remaining } = {
+    firstName1: 'Dream',
+    lastName: 'High',
+    age: 20,
+    height: '123',
+    address: 'somewhere',
+}
+
+console.log("first Name, age", { firstName1, age });
+
+// 5.2 Even better, you can remove unwanted items! 🔥🔥
+let { address, ...safeInfo } = {
+    firstName: 'Dream',
+    lastName: 'High',
+    age: 20,
+    height: '123',
+    address: 'somewhere',
+}
+
+//6. Spread properties for Objects
+// 7. RegExp Lookbehind Assertions
+//positive assertion
+console.log(/(?<=#).*/.test('winning'));
+console.log(/(?<=#).*/.test('#winning'));
+//negative assertion
+console.log('A gallon of milk is $30.00'.match(/(?<!\$)\d+\.?\d+/));
+console.log('A gallon of milk is #30.00'.match(/(?<!\$)\d+\.?\d+/)[0]);
