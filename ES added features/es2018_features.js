@@ -88,3 +88,5 @@ console.log(/(?<=#).*/.test('#winning'));
 //negative assertion
 console.log('A gallon of milk is $30.00'.match(/(?<!\$)\d+\.?\d+/));
 console.log('A gallon of milk is #30.00'.match(/(?<!\$)\d+\.?\d+/)[0]);
+
+// 8. Promise.prototype.finally()
