@@ -90,3 +90,89 @@ console.log('A gallon of milk is $30.00'.match(/(?<!\$)\d+\.?\d+/));
 console.log('A gallon of milk is #30.00'.match(/(?<!\$)\d+\.?\d+/)[0]);
 
 // 8. Promise.prototype.finally()
+
+//resolve case
+let started = false;
+
+let myResolvedPromise = new Promise((resolve, reject) => {
+    resolve("I am good!!");
+})
+    .then(val => {
+        console.log(val);
+    })
+    .catch(err => {
+        console.log(err);
+    })
+    .finally(() => {
+        console.log("This function is always executed!(after resolved)");
+        started = false;
+    });
+
+//reject case
+let myRejectPromise = new Promise((resolve, reject) => {
+    reject("I am absolutely not good!!");
+})
+    .then(val => {
+        console.log(val);
+    })
+    .catch(err => {
+        console.log(err);
+    })
+    .finally(() => {
+        console.log("This function is always executed!(after rejected)");
+        started = false;
+    });
+
+//Error thrown in Promse
+    let myErrorPromise = new Promise((resolve, reject) => {
+        // throw new Error("Error has been occured");
+    })
+        .then(val => {
+            console.log(val);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+        .finally(() => {
+            console.log("This function is always executed!(Error thrown in Promise)");
+            started = false;
+        });
+
+//Error thrown in Promse
+let myErrorInCatchPromise = new Promise((resolve, reject) => {
+        throw new Error("Error has been occured");
+    })
+        .then(val => {
+            console.log(val);
+        })
+        .catch(err => {
+            // throw new Error("Throw another error");
+        })
+        .finally(() => {
+            console.log("This function is always executed!(2 Errors thrown in Promise)");
+            started = false;
+        });
+
+// 9. Asynchronous Iteration
+
+const promises = [
+    new Promise(resolve => resolve(1)),
+    new Promise(resolve => resolve(2)),
+    new Promise(resolve => resolve(3)),
+];
+
+async function test1() {
+    for (const obj of promises) {
+        console.log(obj);
+    }
+}
+
+async function test2() {
+    for await (const obj of promises) {
+        console.log(obj);
+    }
+}
+
+test1();
+test2();
+
