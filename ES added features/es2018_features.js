@@ -123,7 +123,7 @@ let myRejectPromise = new Promise((resolve, reject) => {
         started = false;
     });
 
-//Error thrown in Promse
+//Error thrown in Promise
     let myErrorPromise = new Promise((resolve, reject) => {
         // throw new Error("Error has been occured");
     })
@@ -138,7 +138,7 @@ let myRejectPromise = new Promise((resolve, reject) => {
             started = false;
         });
 
-//Error thrown in Promse
+//Error thrown in Promise
 let myErrorInCatchPromise = new Promise((resolve, reject) => {
         throw new Error("Error has been occured");
     })
