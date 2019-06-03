@@ -1,0 +1,23 @@
+{
+  "name": "javascript-patterns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreamhigh0822/JavaScript-patterns.git"
+  },
+  "keywords": [],
+  "author": "Dream High",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dreamhigh0822/JavaScript-patterns/issues"
+  },
+  "homepage": "https://github.com/dreamhigh0822/JavaScript-patterns#readme",
+  "dependencies": {
+    "ramda": "^0.26.1"
+  }
+}
