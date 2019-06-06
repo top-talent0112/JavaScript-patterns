@@ -1,7 +1,10 @@
 
 class LordInstructions {
     bringTroops = (location, numberOfTroops, when) => {
-        console.log(`Command: Bring ${numberOfTroops} of Troops to ${location} until ${when}`);
+        setTimeout(() => {
+            console.log(`Command: Bring ${numberOfTroops} of Troops to ${location} until ${when}`);
+        }, 1000 * 5);
+        
     }
 }
 
@@ -18,5 +21,9 @@ class BringTroopsCommand {
     }
 }
 
-let bringCommand1 = new BringTroopsCommand('Waterool', 500, '2019-10-10');
-bringCommand1.execute();
+let bringCommand1 = new BringTroopsCommand('Waterool', 500, '2019-01-10');
+let bringCommand2 = new BringTroopsCommand('New York', 500, '2019-02-10');
+let bringCommand3 = new BringTroopsCommand('Boston', 500, '2019-04-10');
+
+process.nextTick(() => bringCommand1.execute());
+console.log("I am gonna doing something else");
